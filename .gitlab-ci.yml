@@ -1,0 +1,69 @@
+stages:
+  - checkout
+  - sast
+  - dast
+  - sca
+  - build
+  - security_gate
+
+variables:
+  SONAR_PROJECT_KEY: "my-project" # Replace with your SonarQube project key
+  SONAR_HOST_URL: "http://your-sonarqube-url" # Replace with your SonarQube URL
+  SONAR_TOKEN: "your-sonarqube-token" # Replace with your SonarQube token
+  SNYK_TOKEN: "your-snyk-api-token" # Replace with your Snyk API token
+  ZAP_TARGET_URL: "http://your-application-url" # Replace with your app URL
+
+checkout:
+  stage: checkout
+  script:
+    - echo "Cloning the repository..."
+    - git clone https://gitlab.com/username/repository-name.git # Replace with your GitLab repo URL
+
+sast:
+  stage: sast
+  image: sonarsource/sonar-scanner-cli:latest
+  script:
+    - sonar-scanner \
+        -Dsonar.projectKey=$SONAR_PROJECT_KEY \
+        -Dsonar.sources=. \
+        -Dsonar.host.url=$SONAR_HOST_URL \
+        -Dsonar.login=$SONAR_TOKEN
+
+dast:
+  stage: dast
+  image: owasp/zap2docker-stable
+  script:
+    - zap-baseline.py -t $ZAP_TARGET_URL -r zap_report.html
+  artifacts:
+    paths:
+      - zap_report.html
+
+sca:
+  stage: sca
+  image: snyk/snyk-cli
+  script:
+    - snyk auth $SNYK_TOKEN
+    - snyk test --json > snyk_report.json
+  artifacts:
+    paths:
+      - snyk_report.json
+
+build:
+  stage: build
+  script:
+    - echo "Building the application..."
+    # Add your build commands here
+
+security_gate:
+  stage: security_gate
+  script:
+    - echo "Running Security Gate checks..."
+    - if [ -f "zap_report.html" ] && grep -q "FAIL-NEW" zap_report.html; then echo "DAST failed!" && exit 1; fi
+    - if [ -f "snyk_report.json" ] && [ "$(jq '.vulnerabilities | length' snyk_report.json)" -gt 0 ]; then echo "SCA vulnerabilities found!" && exit 1; fi
+    - echo "All security checks passed!"
+
+artifacts:
+  expire_in: 1 week
+  paths:
+    - "*.html"
+    - "*.json"
