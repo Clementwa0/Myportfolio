@@ -1,31 +1,45 @@
 pipeline {
     agent any
 
+    environment {
+        // Optional: You can define environment variables here
+    }
+
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/username/repository.git'
+                // Checkout code from GitHub using the specified credentials
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/main']], // Replace with your branch if different
+                    userRemoteConfigs: [[
+                        url: 'https://github.com/Clementwa0/Myportfolio.git',
+                        credentialsId: 'githu' // The credentials ID you created in Jenkins
+                    ]]
+                ])
             }
         }
+
+        // Add more stages as needed (e.g., Build, Test)
         stage('Build') {
             steps {
-                sh 'npm install'  // Adjust according to your build tool (e.g., Maven, Gradle)
-                sh 'npm run build'  // Example for a Node.js application
+                // Placeholder for build steps
+                echo "Building the project..."
             }
         }
+
         stage('Test') {
             steps {
-                sh 'npm test'  // Run unit tests
+                // Placeholder for test steps
+                echo "Running tests..."
             }
         }
     }
 
     post {
-        success {
-            echo 'Build and tests were successful!'
-        }
-        failure {
-            echo 'There was a problem with the build or tests.'
+        always {
+            // Optional post actions (cleanup, notifications, etc.)
+            echo "Pipeline finished."
         }
     }
 }
