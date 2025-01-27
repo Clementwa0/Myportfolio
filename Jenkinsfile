@@ -23,6 +23,16 @@ pipeline {
         }
     }
 
+    stage('SAST Scan') {
+    steps {
+        script {
+            // Integrate SonarQube for static code analysis
+            sh 'mvn sonar:sonar -Dsonar.host.url=http://your_sonarqube_url'
+        }
+    }
+}
+
+
     post {
         always {
             echo "Pipeline finished."
