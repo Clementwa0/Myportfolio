@@ -15,23 +15,21 @@ pipeline {
             }
         }
 
-        // Other stages
         stage('Build') {
             steps {
                 echo "Building the project..."
             }
         }
-    }
 
-    stage('SAST Scan') {
-    steps {
-        script {
-            // Integrate SonarQube for static code analysis
-            sh 'mvn sonar:sonar -Dsonar.host.url=http://your_sonarqube_url'
+        stage('SAST Scan') {
+            steps {
+                script {
+                    // Integrate SonarQube for static code analysis
+                    sh 'mvn sonar:sonar -Dsonar.host.url=http://your_sonarqube_url'
+                }
+            }
         }
     }
-}
-
 
     post {
         always {
