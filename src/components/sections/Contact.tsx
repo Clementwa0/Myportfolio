@@ -47,7 +47,7 @@ const Contact: React.FC = () => {
       icon: <MapPin className="text-purple-600" size={24} />,
       title: 'Location',
       content: 'Nairobi, Kenya',
-      href: 'https://maps.google.com/?q=Masii,Kenya'
+      href: 'https://maps.google.com/?q=Nairobi,Kenya'
     }
   ];
 
