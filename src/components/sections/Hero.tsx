@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
           >
             <div className="inline-block px-4 py-1.5 mt-3 mb-6 bg-indigo-100/60 backdrop-blur-sm rounded-full border border-indigo-200">
               <p className="text-lg md:text-xl text-indigo-700 font-medium">
-                ICT Professional & Full-Stack Developer
+              Full-Stack Developer &  ICT Professional
               </p>
             </div>
           </motion.div>
@@ -140,13 +140,13 @@ const Hero: React.FC = () => {
             {[
               { 
                 icon: <Github size={24} />, 
-                href: "https://github.com/muliclement",
+                href: "https://github.com/Clementwa0",
                 color: "bg-gray-800 hover:bg-gray-900",
                 text: "text-gray-100"
               },
               { 
                 icon: <Linkedin size={24} />, 
-                href: "https://linkedin.com/in/muli-clement",
+                href: "www.linkedin.com/in/muli-clement-wa",
                 color: "bg-blue-600 hover:bg-blue-700",
                 text: "text-white"
               },
