@@ -125,7 +125,7 @@ const Hero: React.FC = () => {
               size="lg"
               className="border-2 border-indigo-500/50 hover:border-indigo-600 transition-colors"
               icon={<Download size={20} className="text-indigo-600" />}
-              onClick={() => window.open('/resume.pdf', '_blank')}
+              onClick={() => window.open('/CV.pdf', '_blank')}
             >
               Download CV
             </Button>
@@ -140,13 +140,13 @@ const Hero: React.FC = () => {
             {[
               { 
                 icon: <Github size={24} />, 
-                href: "https://github.com/muliclement",
+                href: "https://github.com/Clementwa0",
                 color: "bg-gray-800 hover:bg-gray-900",
                 text: "text-gray-100"
               },
               { 
                 icon: <Linkedin size={24} />, 
-                href: "https://linkedin.com/in/muli-clement",
+                href: "https://www.linkedin.com/in/muli-clement-wa/",
                 color: "bg-blue-600 hover:bg-blue-700",
                 text: "text-white"
               },

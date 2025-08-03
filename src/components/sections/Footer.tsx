@@ -4,8 +4,8 @@ import {Linkedin, Mail, Heart, ArrowUp, GitBranch } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const socialLinks = [
-    { icon: <GitBranch size={20} />, href: 'https://github.com/muliclement', label: 'GitHub' },
-    { icon: <Linkedin size={20} />, href: 'https://linkedin.com/in/muli-clement', label: 'LinkedIn' },
+    { icon: <GitBranch size={20} />, href: 'https://github.com/Clementwa0', label: 'GitHub' },
+    { icon: <Linkedin size={20} />, href: 'https://www.linkedin.com/in/muli-clement-wa/', label: 'LinkedIn' },
     { icon: <Mail size={20} />, href: 'mailto:clementwa01@gmail.com', label: 'Email' }
   ];
 
