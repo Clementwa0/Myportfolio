@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
           >
             <div className="inline-block px-4 py-1.5 mt-3 mb-6 bg-indigo-100/60 backdrop-blur-sm rounded-full border border-indigo-200">
               <p className="text-lg md:text-xl text-indigo-700 font-medium">
-                ICT Professional & Full-Stack Developer
+              Full-Stack Developer &  ICT Professional
               </p>
             </div>
           </motion.div>

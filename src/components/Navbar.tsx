@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X,  } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDark, setIsDark] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const navItems = [
@@ -61,12 +60,7 @@ const Navbar: React.FC = () => {
                   {item.name}
                 </button>
               ))}
-              <button
-                onClick={() => setIsDark(!isDark)}
-                className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
-              >
-                {isDark ? <Sun size={20} /> : <Moon size={20} />}
-              </button>
+              
             </div>
           </div>
 
