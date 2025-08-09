@@ -24,7 +24,7 @@ const Header: React.FC = () => {
   }, []);
 
   const navItems = [
-    { name: "Mission Control", href: "#hero" },
+    { name: "The Codeverse", href: "#hero" },
     { name: "Launchpad", href: "#projects" },
     { name: "Dev Orbit", href: "#skills" },
     { name: "Lab Logs", href: "#about" },
