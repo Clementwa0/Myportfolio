@@ -33,7 +33,7 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 dark:from-gray-900 dark:via-purple-700 dark:to-gray-900 text-white overflow-x-hidden">
+<div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-purple-800 to-gray-900 dark:from-gray-900 dark:via-purple-900 dark:to-gray-900 text-white overflow-x-hidden">
         <ParticleField />
         <Header />
         <main className="relative z-10">

@@ -463,7 +463,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ isOpen, onToggle }) => {
         className="fixed bottom-4 right-6 w-14 h-14 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white shadow-lg z-40"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        animate={{ y: [1], x: [1] }}
+        animate={{ y: [] }}
         transition={{ duration: 1, repeat: Infinity }}
         aria-label="AI Assistant"
       >
