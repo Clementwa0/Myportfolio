@@ -23,7 +23,7 @@ export  const projects = [
       technologies: ["React", "FullCalendar", "Context API", "Tailwind CSS"],
       category: "Web App",
       githubUrl: "https://github.com/Clementwa0/Job-tracker",
-      liveUrl: "https://job-tracker-teal.vercel.app",
+      liveUrl: "https://jobtrailapp.vercel.app/",
       color: "from-green-500 to-emerald-500",
       status: "completed"
     },
@@ -49,7 +49,7 @@ export  const projects = [
       technologies: ["MERN Stack", "TypeScript", "Tailwind CSS", "MongoDB"],
       category: "Web App",
       githubUrl: "https://github.com/Clementwa0/Auto-Spare-MS",
-      liveUrl: "https://auto-spare-ms.vercel.app/dashboard",
+      liveUrl: "https://auto-spares.vercel.app/login",
       color: "from-orange-500 to-yellow-500",
       status: "inprogress"
     },
